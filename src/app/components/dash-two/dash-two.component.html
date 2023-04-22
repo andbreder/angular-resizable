@@ -1,0 +1,141 @@
+<!-- <div class="d-flex h-75 w-100">
+  <as-split direction="horizontal">
+    <as-split-area [size]="30">
+      <as-split direction="vertical" [gutterSize]="5">
+        <as-split-area [size]="25">aaaaaaaaaaaaa</as-split-area>
+        <as-split-area [size]="25">aaaaaaaaaaaaa</as-split-area>
+        <as-split-area [size]="25">aaaaaaaaaaaaa</as-split-area>
+        <as-split-area [size]="25">aaaaaaaaaaaaa</as-split-area>
+
+        
+      </as-split>
+    </as-split-area>
+    <as-split-area [size]="70">
+      <as-split direction="horizontal">
+        <as-split-area [size]="25">bbbbbbbbbbbbb</as-split-area>
+        <as-split-area [size]="25">bbbbbbbbbbbbb</as-split-area>
+        <as-split-area [size]="25">bbbbbbbbbbbbb</as-split-area>
+        <as-split-area [size]="25">bbbbbbbbbbbbb</as-split-area>
+      </as-split>
+    </as-split-area>
+  </as-split>
+</div> 
+
+<div class="grid-container" style="height: 615px; overflow: hidden;">
+  <mat-grid-list cols="8" rowHeight="1:1" gutterSize="15px">
+    <mat-grid-tile *ngFor="let card of cards; let i = index;" 
+                   [colspan]="card.cols" [rowspan]="card.rows">
+      <cdk-drop-list [cdkDropListConnectedTo]="drops" [cdkDropListData]="i" >
+        <mat-card cdkDrag (cdkDragEntered)="entered($event)" [cdkDragData]="i"
+                  class="dashboard-card"  [style.backgroundColor]="card.color">
+              <mat-icon cdkDragHandle class="more-button">drag_handle</mat-icon>
+          <mat-card-content class="dashboard-card-content">
+            <h1>qualquer coisa</h1>
+            <div>estou tentendo</div>
+          </mat-card-content>
+        </mat-card>
+      </cdk-drop-list>
+    </mat-grid-tile>
+  </mat-grid-list>
+</div> -->
+<!-- 
+<div class="limits">
+  <app-drag-item1
+    cdkDrag
+    cdkDragBoundary=".limits"
+    class="example-box"
+    (cdkDragDropped)="cdkDragDropped($event)"
+    (cdkDragEnded)="cdkDragEnded($event)"
+    (cdkDragEntered)="cdkDragEntered($event)"
+    (cdkDragExited)="cdkDragExited($event)"
+    (cdkDragReleased)="cdkDragReleased($event)"
+    (cdkDragMoved)="cdkDragMoved($event)"
+    (cdkDragStarted)="cdkDragStarted($event)"
+  ></app-drag-item1>
+  <app-drag-item2
+    cdkDrag
+    cdkDragBoundary=".limits"
+    class="example-box"
+    (cdkDragDropped)="cdkDragDropped($event)"
+    (cdkDragEnded)="cdkDragEnded($event)"
+    (cdkDragEntered)="cdkDragEntered($event)"
+    (cdkDragExited)="cdkDragExited($event)"
+    (cdkDragReleased)="cdkDragReleased($event)"
+    (cdkDragStarted)="cdkDragStarted($event)"
+  ></app-drag-item2>
+</div>
+ -->
+
+<!-- <div cdkDropList cdkDropListOrientation="horizontal" class="example-list-1111" (cdkDropListDropped)="drop($event)">
+  <div class="example-box-1111" *ngFor="let timePeriod of timePeriods" cdkDrag>{{timePeriod}}</div>
+</div> -->
+
+<div 
+cdkDropListGroup
+class="limits"
+>
+  <div
+    (cdkDropListDropped)="cdkDropListDropped($event)"
+    (cdkDropListEntered)="cdkDropListEntered($event)"
+    (cdkDropListExited)="cdkDropListExited($event)"
+    (cdkDropListSorted)="cdkDropListSorted($event)"
+    [cdkDropListData]="itemsOriginal"
+    cdkDropList
+  >
+    <div *ngFor="let item of itemsOriginal"
+    (cdkDragDropped)="cdkDragDropped($event)"
+    (cdkDragEnded)="cdkDragEnded($event)"
+    (cdkDragEntered)="cdkDragEntered($event)"
+    (cdkDragExited)="cdkDragExited($event)"
+    (cdkDragReleased)="cdkDragReleased($event)"
+    (cdkDragStarted)="cdkDragStarted($event)"
+      cdkDrag
+      cdkDragBoundary=".limits"
+      class="example-box"
+    >
+      <div class="example-custom-placeholder" *cdkDragPlaceholder></div>
+      <app-drag-item1 *ngIf="item === 'item1'"></app-drag-item1>
+      <app-drag-item2 *ngIf="item === 'item2'"></app-drag-item2>
+      <app-drag-item3 *ngIf="item === 'item3'"></app-drag-item3>
+      <app-drag-item4 *ngIf="item === 'item4'"></app-drag-item4>
+    </div>
+  </div>
+  <div
+    (cdkDropListDropped)="cdkDropListDropped($event)"
+    [cdkDropListData]="items1"
+    cdkDropList
+  >
+    <div *ngFor="let item of items1"
+      (cdkDragReleased)="cdkDragReleased($event)"
+      (cdkDragStarted)="cdkDragStarted($event)"
+      cdkDrag
+      cdkDragBoundary=".limits"
+      class="example-box"
+    >
+      <div class="example-custom-placeholder" *cdkDragPlaceholder></div>
+      <app-drag-item1 *ngIf="item === 'item1'"></app-drag-item1>
+      <app-drag-item2 *ngIf="item === 'item2'"></app-drag-item2>
+      <app-drag-item3 *ngIf="item === 'item3'"></app-drag-item3>
+      <app-drag-item4 *ngIf="item === 'item4'"></app-drag-item4>
+    </div>
+  </div>
+  <div
+    (cdkDropListDropped)="cdkDropListDropped($event)"
+    [cdkDropListData]="items2"
+    cdkDropList
+  >
+    <div *ngFor="let item of items2"
+      (cdkDragReleased)="cdkDragReleased($event)"
+      (cdkDragStarted)="cdkDragStarted($event)"
+      cdkDrag
+      cdkDragBoundary=".limits"
+      class="example-box"
+    >
+      <div class="example-custom-placeholder" *cdkDragPlaceholder></div>
+      <app-drag-item1 *ngIf="item === 'item1'"></app-drag-item1>
+      <app-drag-item2 *ngIf="item === 'item2'"></app-drag-item2>
+      <app-drag-item3 *ngIf="item === 'item3'"></app-drag-item3>
+      <app-drag-item4 *ngIf="item === 'item4'"></app-drag-item4>
+    </div>
+  </div>
+</div>

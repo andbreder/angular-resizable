@@ -1,0 +1,46 @@
+/* You can add global styles to this file, and also import other style files */
+
+/* Importing Bootstrap SCSS file. */
+@import "./node_modules/bootstrap/scss/bootstrap";
+
+/* Importing Datepicker SCSS file. */
+@import "node_modules/ngx-bootstrap/datepicker/bs-datepicker";
+
+html, body { height: 100vh; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+
+.apexcharts-tooltip {
+  background: unset !important;
+  border: unset !important;
+  border-radius: 0 !important;
+  color: unset !important;
+  font-family: 'Source Code Pro', monospace;
+  padding: unset !important;
+  overflow: visible !important;
+  white-space: normal !important;
+  opacity: 1 !important;
+  box-shadow: unset !important;
+}
+.custom-tooltip {
+  background: #0f0f0f;
+  border: 2px solid #002521;
+  /* offset-x | offset-y | blur-radius | spread-radius | color */
+  box-shadow: 0 0px 5px 1px #00252160 !important;
+  color: #fff;
+  font-size: 10px;
+  padding: 0.25rem;
+
+  div {
+    display: flex;
+    span:first-of-type {
+      padding-right: 2em;
+    }
+    span:last-of-type {
+      margin-left: auto;
+    }
+  }
+
+  .apr { color: #00C853 !important }
+  .neg { color: #F44336 !important }
+}

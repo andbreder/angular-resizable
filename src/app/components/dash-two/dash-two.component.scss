@@ -1,0 +1,131 @@
+:host{
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+}
+
+.example-box {
+  border: solid 1px #ccc;
+  color: rgba(0, 0, 0, 0.87);
+  cursor: move;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background: #fff;
+  position: relative;
+  z-index: 1;
+  box-sizing: border-box;
+  padding: 10px;
+  transition: box-shadow 200ms cubic-bezier(0, 0, 0.2, 1);
+  box-shadow: 0 3px 1px -2px rgba(0, 0, 0, 0.2),
+              0 2px 2px 0 rgba(0, 0, 0, 0.14),
+              0 1px 5px 0 rgba(0, 0, 0, 0.12);
+  flex: 1;
+}
+
+.example-box:active {
+  border: 3px blue solid !important;
+  box-shadow: 0 5px 5px -3px rgba(0, 0, 0, 0.2),
+              0 8px 10px 1px rgba(0, 0, 0, 0.14),
+              0 3px 14px 2px rgba(0, 0, 0, 0.12);
+}
+
+.example-custom-placeholder {
+  flex: 1;
+  background: #ccc;
+  border: dotted 3px #999;
+  transition: transform 250ms cubic-bezier(0, 0, 0.2, 1);
+}
+
+.cdk-drop-list-dragging .example-box:not(.cdk-drag-placeholder) {
+  transition: transform 250ms cubic-bezier(0, 0, 0.2, 1);
+}
+.cdk-drag-preview {
+  border: 3px rgb(0, 183, 255) solid !important;
+  box-sizing: border-box;
+  border-radius: 4px;
+  box-shadow: 0 5px 5px -3px rgba(0, 0, 0, 0.2),
+              0 8px 10px 1px rgba(0, 0, 0, 0.14),
+              0 3px 14px 2px rgba(0, 0, 0, 0.12);
+}
+
+.limits {
+  margin: 1rem;
+  padding: 1rem;
+  border: dotted #ccc 2px;
+  display: flex;
+  flex: 1;
+
+  & > div {
+    margin: 1rem;
+    padding: 1rem;
+    border: dotted #55F 2px;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+  }
+}
+
+.moving {
+  border: 3px red solid !important;
+}
+
+
+
+
+
+
+
+
+.example-list-1111 {
+  width: 1000px;
+  max-width: 100%;
+  border: solid 1px #ccc;
+  min-height: 60px;
+  display: flex;
+  flex-direction: row;
+  background: white;
+  border-radius: 4px;
+  overflow: hidden;
+    
+  .cdk-drag-preview {
+    box-sizing: border-box;
+    border-radius: 4px;
+    box-shadow: 0 5px 5px -3px rgba(0, 0, 0, 0.2),
+                0 8px 10px 1px rgba(0, 0, 0, 0.14),
+                0 3px 14px 2px rgba(0, 0, 0, 0.12);
+  }
+
+  .cdk-drag-placeholder {
+    opacity: 0;
+  }
+
+  .cdk-drag-animating {
+    transition: transform 250ms cubic-bezier(0, 0, 0.2, 1);
+  }
+  
+  .example-box-1111 {
+    padding: 20px 10px;
+    border-right: solid 1px #ccc;
+    color: rgba(0, 0, 0, 0.87);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    box-sizing: border-box;
+    cursor: move;
+    background: white;
+    font-size: 14px;
+    flex-grow: 1;
+    flex-basis: 0;
+
+    &:last-child {
+      border: none;
+    }
+  }
+
+  &.cdk-drop-list-dragging .example-box-1111:not(.cdk-drag-placeholder) {
+    transition: transform 250ms cubic-bezier(0, 0, 0.2, 1);
+  }
+}

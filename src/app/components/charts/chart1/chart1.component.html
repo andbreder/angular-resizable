@@ -1,0 +1,30 @@
+
+<main>
+  <div class="ap-chart" #chart>
+    <apx-chart
+      [annotations]="chartOptions.annotations"
+      [chart]="chartOptions.chart"
+      [colors]="chartOptions.colors"
+      [dataLabels]="chartOptions.dataLabels"
+      [legend]="chartOptions.legend"
+      [markers]="chartOptions.markers"
+      [series]="chartOptions.series"
+      [stroke]="chartOptions.stroke"
+      [title]="chartOptions.title"
+      [tooltip]="chartOptions.tooltip"
+      [xaxis]="chartOptions.xaxis"
+      [yaxis]="chartOptions.yaxis"
+    ></apx-chart>
+  </div>
+</main>
+
+<div #chartBrush class="ap-chart-brush">
+  <apx-chart
+    [chart]="chartOptionsBrush.chart"
+    [colors]="chartOptionsBrush.colors"
+    [fill]="chartOptionsBrush.fill"
+    [series]="chartOptionsBrush.series"
+    [xaxis]="chartOptionsBrush.xaxis"
+    [yaxis]="chartOptionsBrush.yaxis"
+  ></apx-chart>
+</div>

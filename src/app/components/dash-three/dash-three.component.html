@@ -1,0 +1,152 @@
+
+<button id="enableDrag" class="btn btn-warning" type="button" (click)="disableDrag = !disableDrag">
+  <small>drag elements</small>&nbsp;<strong>{{ disableDrag ? 'disable' : 'enable' }}</strong>
+</button>
+
+<div 
+cdkDropListGroup
+class="limits"
+>
+  <div class="d-flex h-100 w-100">
+    <as-split direction="horizontal">
+      <as-split-area [size]="25">
+        <as-split direction="vertical" [gutterSize]="5">
+          <as-split-area [size]="50" style="display: flex;">
+            <div
+              (cdkDropListDropped)="cdkDropListDropped($event)"
+              [cdkDropListData]="items11"
+              cdkDropList
+              cdkDropListSortingDisabled
+            >
+              <div *ngFor="let item of items11"
+                [cdkDragDisabled]="disableDrag"
+                cdkDrag
+                cdkDragBoundary=".limits"
+              >
+                <div class="example-custom-placeholder" *cdkDragPlaceholder></div>
+                <div class="header"><h1>{{item}}</h1><strong >mexe</strong></div>
+                <app-drag-item1 *ngIf="item === 'item1'"></app-drag-item1>
+                <app-drag-item2 *ngIf="item === 'item2'"></app-drag-item2>
+                <app-drag-item3 *ngIf="item === 'item3'"></app-drag-item3>
+                <app-drag-item4 *ngIf="item === 'item4'"></app-drag-item4>
+              </div>
+            </div>
+          </as-split-area>
+          <as-split-area [size]="50" style="display: flex;">
+            <div
+              (cdkDropListDropped)="cdkDropListDropped($event)"
+              [cdkDropListData]="items12"
+              cdkDropList
+              cdkDropListSortingDisabled
+            >
+              <div *ngFor="let item of items12"
+                [cdkDragDisabled]="disableDrag"
+                cdkDrag
+                cdkDragBoundary=".limits"
+              >
+                <div class="example-custom-placeholder" *cdkDragPlaceholder></div>
+                <div class="header"><h1>{{item}}</h1><strong >mexe</strong></div>
+                <app-drag-item1 *ngIf="item === 'item1'"></app-drag-item1>
+                <app-drag-item2 *ngIf="item === 'item2'"></app-drag-item2>
+                <app-drag-item3 *ngIf="item === 'item3'"></app-drag-item3>
+                <app-drag-item4 *ngIf="item === 'item4'"></app-drag-item4>
+              </div>
+            </div>
+          </as-split-area>
+        </as-split>
+      </as-split-area>
+      <as-split-area [size]="50">
+        <as-split direction="horizontal" [gutterSize]="5">
+          <as-split-area [size]="50" style="display: flex;">
+            <div
+              (cdkDropListDropped)="cdkDropListDropped($event)"
+              [cdkDropListData]="items21"
+              cdkDropList
+              cdkDropListSortingDisabled
+            >
+              <div *ngFor="let item of items21"
+                [cdkDragDisabled]="disableDrag"
+                cdkDrag
+                cdkDragBoundary=".limits"
+              >
+                <div class="example-custom-placeholder" *cdkDragPlaceholder></div>
+                <div class="header"><h1>{{item}}</h1><strong >mexe</strong></div>
+                <app-drag-item1 *ngIf="item === 'item1'"></app-drag-item1>
+                <app-drag-item2 *ngIf="item === 'item2'"></app-drag-item2>
+                <app-drag-item3 *ngIf="item === 'item3'"></app-drag-item3>
+                <app-drag-item4 *ngIf="item === 'item4'"></app-drag-item4>
+              </div>
+            </div>
+          </as-split-area>
+          <as-split-area [size]="50" style="display: flex;">
+            <div
+              (cdkDropListDropped)="cdkDropListDropped($event)"
+              [cdkDropListData]="items22"
+              cdkDropList
+              cdkDropListSortingDisabled
+            >
+              <div *ngFor="let item of items22"
+                [cdkDragDisabled]="disableDrag"
+                cdkDrag
+                cdkDragBoundary=".limits"
+              >
+                <div class="example-custom-placeholder" *cdkDragPlaceholder></div>
+                <div class="header"><h1>{{item}}</h1><strong >mexe</strong></div>
+                <app-drag-item1 *ngIf="item === 'item1'"></app-drag-item1>
+                <app-drag-item2 *ngIf="item === 'item2'"></app-drag-item2>
+                <app-drag-item3 *ngIf="item === 'item3'"></app-drag-item3>
+                <app-drag-item4 *ngIf="item === 'item4'"></app-drag-item4>
+              </div>
+            </div>
+          </as-split-area>
+        </as-split>
+      </as-split-area>
+      <as-split-area [size]="25">
+        <as-split direction="vertical" [gutterSize]="5">
+          <as-split-area [size]="50" style="display: flex;">
+            <div
+              (cdkDropListDropped)="cdkDropListDropped($event)"
+              [cdkDropListData]="items31"
+              cdkDropList
+              cdkDropListSortingDisabled
+            >
+              <div *ngFor="let item of items31"
+                [cdkDragDisabled]="disableDrag"
+                cdkDrag
+                cdkDragBoundary=".limits"
+              >
+                <div class="example-custom-placeholder" *cdkDragPlaceholder></div>
+                <div class="header"><h1>{{item}}</h1><strong >mexe</strong></div>
+                <app-drag-item1 *ngIf="item === 'item1'"></app-drag-item1>
+                <app-drag-item2 *ngIf="item === 'item2'"></app-drag-item2>
+                <app-drag-item3 *ngIf="item === 'item3'"></app-drag-item3>
+                <app-drag-item4 *ngIf="item === 'item4'"></app-drag-item4>
+              </div>
+            </div>
+          </as-split-area>
+          <as-split-area [size]="50" style="display: flex;">
+            <div
+              (cdkDropListDropped)="cdkDropListDropped($event)"
+              [cdkDropListData]="items32"
+              cdkDropList
+              cdkDropListSortingDisabled
+            >
+              <div *ngFor="let item of items32"
+                [cdkDragDisabled]="disableDrag"
+                cdkDrag
+                cdkDragBoundary=".limits"
+              >
+                <div class="example-custom-placeholder" *cdkDragPlaceholder></div>
+                <div class="header"><h1>{{item}}</h1><strong >mexe</strong></div>
+                <app-drag-item1 *ngIf="item === 'item1'"></app-drag-item1>
+                <app-drag-item2 *ngIf="item === 'item2'"></app-drag-item2>
+                <app-drag-item3 *ngIf="item === 'item3'"></app-drag-item3>
+                <app-drag-item4 *ngIf="item === 'item4'"></app-drag-item4>
+              </div>
+            </div>
+          </as-split-area>
+        </as-split>
+      </as-split-area>
+    </as-split>
+  </div>
+</div>

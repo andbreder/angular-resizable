@@ -1,0 +1,134 @@
+:host{
+  display: flex;
+  flex: 1;
+}
+
+#enableDrag {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+}
+
+.cdk-drop-list {
+  display: flex;
+  flex: 1;
+}
+
+.limits {
+  border: dotted red 3px;
+  display: flex;
+  flex: 1;
+}
+
+
+.cdk-drag {
+  flex: 1;
+  flex-direction: column;
+
+  border: solid 1px #ccc;
+  display: flex;
+  background: #fff;
+  box-sizing: border-box;
+  padding: 10px;
+  transition: box-shadow 200ms cubic-bezier(0, 0, 0.2, 1);
+  box-shadow: 0 3px 1px -2px rgba(0, 0, 0, 0.2),
+              0 2px 2px 0 rgba(0, 0, 0, 0.14),
+              0 1px 5px 0 rgba(0, 0, 0, 0.12);
+
+  &:not(.cdk-drag-disabled):not(.cdk-drag-preview) {
+    position: relative;
+
+    @keyframes clippath {
+      0% {
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        border: 7px solid #00f;
+      }
+      50% {
+        top: -0.5em;
+        left: -0.5em;
+        right: -0.5em;
+        bottom: -0.5em;
+        border: 0 solid transparent;
+      }
+      100% {
+        border: 3px solid transparent;
+      }
+    }
+    &:after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: #00f1;
+      backdrop-filter: blur(1px);
+      box-shadow: 0 4px 30px #00f1;
+      z-index: 500;
+    }
+    &::before {
+      content: "";
+      position: absolute;
+      animation: clippath 1.5s infinite linear;
+    }
+  }
+  .header {
+    background-color: #00f;
+    align-items: center;
+    display: flex;
+    width: 100%;
+    h1 {
+      margin-bottom: 0;
+      margin-right: auto;
+    }
+  }
+}
+
+.example-custom-placeholder {
+  @keyframes opacityIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+  }
+  animation: opacityIn 200ms ease-in;
+  flex: 1;
+  position: absolute; top: 0; right: 0; bottom: 0; left: 0;
+  transition: all 500ms linear;
+  z-index: 500;
+  /* From https://css.glass */
+  background: #0003;
+  backdrop-filter: blur(2px);
+  box-shadow: 0 4px 30px #0001;
+}
+
+
+.cdk-drop-list {
+  padding: 2rem;
+  &:has(.example-custom-placeholder) {
+    position: relative;
+  }
+}
+.cdk-drag-preview {
+  box-shadow: 0 5px 5px -3px rgba(0, 0, 0, 0.2), 0 8px 10px 1px rgba(0, 0, 0, 0.14), 0 3px 14px 2px rgba(0, 0, 0, 0.12);
+  box-sizing: border-box;
+  opacity: 0.5;
+}
+
+
+
+
+
+
+/* mudar o cursos do cdk-drag-handle >>> */
+.cdk-drag-handle {
+  cursor: grab;
+}
+/* qnd clicar no 'movedor' e qnd arrastar a bacaca */
+.cdk-drag-preview .cdk-drag-handle,
+.draggable-container:active .cdk-drag-handle {
+  pointer-events: auto;
+  cursor: grabbing;
+}
+/* mudar o cursos do cdk-drag-handle <<< */
